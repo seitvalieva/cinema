@@ -50,18 +50,22 @@ class Realisateur {
         return $this;
     }
 
-    public function getDateNaiss_realisateur()
+    public function getBday_realisateur(): DateTime
     {
-        return $this->dateNaiss_realisateur;
+        return $this->bday_realisateur;
     }
 
-    public function setDateNaiss_realisateur($dateNaiss_realisateur)
+    public function setBday_realisateur($bday_realisateur)
     {
-        $this->dateNaiss_realisateur = $dateNaiss_realisateur;
+        $this->bday_realisateur = $bday_realisateur;
 
         return $this;
     }
     public function __toString() {
-        return $this->name_realisateur." ".$this->prenom_realisateur;
+        return "name: ".$this->name_realisateur."<br>prenom: ".$this->prenom_realisateur;
+    }
+
+    public function getInfo() {
+        return $this."<br>sexe: ".$this->sexe_realisateur;
     }
 }
