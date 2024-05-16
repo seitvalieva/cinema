@@ -1,28 +1,30 @@
 <?php
 
 class Film {
-    private string $titre_film;
+    private string $titreFilm;
     private DateTime $dateSortie;
-    private int $duree_min;
+    private int $dureeMinutes;
     private string $resume;
+    private Genre $filmGenre;
+    private Realisateur $realisateurFilm;
 
-    public function __construct(string $titre_film, string $dateSortie, 
-                                int $duree_min, string $resume)
+    public function __construct(string $titreFilm, string $dateSortie, 
+                                int $dureeMinutes, string $resume)
     {
-        $this->titre_film = $titre_film;
+        $this->titreFilm = $titreFilm;
         $this->dateSortie = new DateTime($dateSortie);
-        $this->duree_min = $duree_min;
+        $this->dureeMinutes = $dureeMinutes;
         $this->resume = $resume;
     }
  
-    public function getTitre_film()
+    public function getTitreFilm()
     {
-        return $this->titre_film;
+        return $this->titreFilm;
     }
  
-    public function setTitre_film($titre_film)
+    public function setTitreFilm($titreFilm)
     {
-        $this->titre_film = $titre_film;
+        $this->titreFilm = $titreFilm;
 
         return $this;
     }
@@ -39,14 +41,14 @@ class Film {
         return $this;
     }
 
-    public function getDuree_min()
+    public function getDureeMinutes()
     {
-        return $this->duree_min;
+        return $this->dureeMinutes;
     }
 
-    public function setDuree_min($duree_min)
+    public function setDureeMinutes($dureeMinutes)
     {
-        $this->duree_min = $duree_min;
+        $this->dureeMinutes = $dureeMinutes;
 
         return $this;
     }
@@ -64,6 +66,6 @@ class Film {
     }
     public function __toString() {
 
-        return $this->titre_film."<br>".$this->resume."<br>";
+        return $this->titreFilm."<br>".$this->resume."<br>";
     }
 }
