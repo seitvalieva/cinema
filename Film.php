@@ -1,12 +1,12 @@
 <?php
 
 class Film {
-    private string $titreFilm;
-    private DateTime $dateSortie;
-    private int $dureeMinutes;
-    private string $resume;
-    private Genre $filmGenre;
-    private Realisateur $realisateurFilm;
+    private string $titreFilm;   //title of a film
+    private DateTime $dateSortie;  // Release date
+    private int $dureeMinutes;    // duration in minutes
+    private string $resume;         // description 
+    private Genre $filmGenre;       
+    private Realisateur $realisateurFilm;   //director of a film
 
     //initializing object Film with its Realisateur and Genre
 
@@ -99,7 +99,7 @@ class Film {
         return $this->titreFilm."<br>".$this->resume."<br>";
     }
 
-    //displaying info about a film with info about its realisateur and genre
+    //displaying info about a film with info about its director and genre
 
     public function getInfo(): string {
         return $this."duree: ".$this->dureeMinutes." minutes<br> annee: ".
