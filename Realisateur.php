@@ -70,7 +70,9 @@ class Realisateur {
 
     public function getInfo():string {
 
-        return $this."<br>sexe: ".$this->sexeRealisateur."<br> date de naissance: ".date_format($this->bdayRealisateur, "d-m-Y")."<br>";
+        // return $this."<br>sexe: ".$this->sexeRealisateur."<br> date de naissance: ".date_format($this->bdayRealisateur, "d-m-Y")."<br>";
+        
+        return $this."<br>sexe: ".$this->sexeRealisateur."<br> date de naissance: ".$this->bdayRealisateur->format("d-m-Y")."<br>";
     }
     
 }

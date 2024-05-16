@@ -15,7 +15,7 @@ class Acteur {
         $this->bdayActeur  = $bdayActeur;                 
  }
  
-    public function getNameActeur()
+    public function getNameActeur():string
     {
         return $this->nameActeur;
     }
@@ -27,7 +27,7 @@ class Acteur {
         return $this;
     }
  
-    public function getNomActeur()
+    public function getNomActeur():string
     {
         return $this->nomActeur;
     }
@@ -39,7 +39,7 @@ class Acteur {
         return $this;
     }
 
-    public function getSexeActeur()
+    public function getSexeActeur():string
     {
         return $this->sexeActeur;
     }
@@ -51,7 +51,7 @@ class Acteur {
         return $this;
     }
  
-    public function getBdayActeur()
+    public function getBdayActeur():DateTime
     {
         return $this->bdayActeur;
     }
@@ -62,7 +62,8 @@ class Acteur {
 
         return $this;
     }
-    public function __toString(){
+    public function __toString():string
+    {
         return $this->nameActeur." ".$this->nomActeur;
     }
 }

@@ -14,8 +14,11 @@ class Film {
                                 int $dureeMinutes, string $resume,
                                 Realisateur $realisateurFilm, Genre $filmGenre )
     {
+        //initialiser des variables/attribues et donner leurs valeurs
+        //$this pour designer l'objet currant
+
         $this->titreFilm = $titreFilm;
-        $this->dateSortie = new DateTime($dateSortie);
+        $this->dateSortie = new DateTime($dateSortie); //transformer en date type
         $this->dureeMinutes = $dureeMinutes;
         $this->resume = $resume;
         $this->realisateurFilm = $realisateurFilm;
@@ -23,7 +26,7 @@ class Film {
         
     }
  
-    public function getTitreFilm()
+    public function getTitreFilm():string
     {
         return $this->titreFilm;
     }
@@ -35,7 +38,7 @@ class Film {
         return $this;
     }
  
-    public function getDateSortie()
+    public function getDateSortie():DateTime
     {
         return $this->dateSortie;
     }
@@ -47,7 +50,7 @@ class Film {
         return $this;
     }
 
-    public function getDureeMinutes()
+    public function getDureeMinutes():int
     {
         return $this->dureeMinutes;
     }
@@ -59,7 +62,7 @@ class Film {
         return $this;
     }
 
-    public function getResume()
+    public function getResume():string
     {
         return $this->resume;
     }
@@ -71,7 +74,7 @@ class Film {
         return $this;
     }
  
-    public function getFilmGenre()
+    public function getFilmGenre():Genre
     {
         return $this->filmGenre;
     }
@@ -83,7 +86,7 @@ class Film {
         return $this;
     }
 
-    public function getRealisateurFilm()
+    public function getRealisateurFilm():Realisateur
     {
         return $this->realisateurFilm;
     }
@@ -102,6 +105,7 @@ class Film {
     //displaying info about a film with info about its director and genre
 
     public function getInfo(): string {
+
         return $this."duree: ".$this->dureeMinutes." minutes<br> annee: ".
         date_format($this->dateSortie, "Y")."<br>realisateur: ".$this->realisateurFilm.
         "<br> genre: ".$this->filmGenre;
