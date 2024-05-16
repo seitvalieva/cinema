@@ -103,7 +103,7 @@ class Film {
 
     public function getInfo(): string {
         return $this."duree: ".$this->dureeMinutes." minutes<br> annee: ".
-        date_format($this->dateSortie, "Y")."<br>realisateur: <br>".$this->realisateurFilm.
+        date_format($this->dateSortie, "Y")."<br>realisateur: ".$this->realisateurFilm.
         "<br> genre: ".$this->filmGenre;
     }
 }

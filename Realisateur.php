@@ -1,15 +1,15 @@
 <?php
 class Realisateur {
-    private string $nameRealisateur;
-    private string $prenomRealisateur;
-    private string $sexeRealisateur;
-    private DateTime $bdayRealisateur; // Date de naissance 
+    private string $nameRealisateur;        
+    private string $nomRealisateur;      // surname
+    private string $sexeRealisateur;     // gender
+    private DateTime $bdayRealisateur;  // birthday
 
-    public function __construct(string $nameRealisateur, string $prenomRealisateur, 
+    public function __construct(string $nameRealisateur, string $nomRealisateur, 
                         string $sexeRealisateur, string $bdayRealisateur) 
     {
         $this->nameRealisateur = $nameRealisateur;
-        $this->prenomRealisateur = $prenomRealisateur;
+        $this->nomRealisateur = $nomRealisateur;
         $this->sexeRealisateur = $sexeRealisateur;
         $this->bdayRealisateur = new DateTime($bdayRealisateur);
     }
@@ -26,14 +26,14 @@ class Realisateur {
         return $this;
     }
 
-    public function getPrenomRealisateur()
+    public function getNomRealisateur()
     {
-        return $this->prenomRealisateur;
+        return $this->nomRealisateur;
     }
 
-    public function setPrenomRealisateur($prenomRealisateur)
+    public function setNomRealisateur($nomRealisateur)
     {
-        $this->prenomRealisateur = $prenomRealisateur;
+        $this->nomRealisateur = $nomRealisateur;
 
         return $this;
     }
@@ -63,8 +63,10 @@ class Realisateur {
         return $this;
     }
     public function __toString() {
-        return "name: ".$this->nameRealisateur."<br>prenom: ".$this->prenomRealisateur;
+        return $this->nameRealisateur." ".$this->nomRealisateur;
     }
+
+    //displaying info about Director and his birthday
 
     public function getInfo():string {
 
