@@ -2,26 +2,26 @@
 
 class Genre {
 
-    private string $nom_genre;
+    private string $nomGenre;
 
-    public function __construct(string $nom_genre) {
+    public function __construct(string $nomGenre) {
 
-        $this->nom_genre = $nom_genre;
+        $this->nomGenre = $nomGenre;
     }
  
-    public function getNom_genre()
+    public function getNomGenre()
     {
-        return $this->nom_genre;
+        return $this->nomGenre;
     }
 
-    public function setNom_genre($nom_genre)
+    public function setNomGenre($nomGenre)
     {
-        $this->nom_genre = $nom_genre;
+        $this->nomGenre = $nomGenre;
 
         return $this;
     }
 
     public function __toString(){
-        return $this->nom_genre;
+        return $this->nomGenre;
     }
 }
