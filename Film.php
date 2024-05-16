@@ -8,6 +8,8 @@ class Film {
     private Genre $filmGenre;
     private Realisateur $realisateurFilm;
 
+    //initializing object Film with its Realisateur and Genre
+
     public function __construct(string $titreFilm, string $dateSortie, 
                                 int $dureeMinutes, string $resume,
                                 Realisateur $realisateurFilm, Genre $filmGenre )
@@ -16,8 +18,9 @@ class Film {
         $this->dateSortie = new DateTime($dateSortie);
         $this->dureeMinutes = $dureeMinutes;
         $this->resume = $resume;
-        $this->filmGenre = $filmGenre;
         $this->realisateurFilm = $realisateurFilm;
+        $this->filmGenre = $filmGenre;
+        
     }
  
     public function getTitreFilm()
@@ -95,7 +98,12 @@ class Film {
 
         return $this->titreFilm."<br>".$this->resume."<br>";
     }
+
+    //displaying info about a film with info about its realisateur and genre
+
     public function getInfo(): string {
-        return $this."duree:".$this->dureeMinutes."<br> annee: ".date_format($this->dateSortie, "Y");
+        return $this."duree: ".$this->dureeMinutes." minutes<br> annee: ".
+        date_format($this->dateSortie, "Y")."<br>realisateur: <br>".$this->realisateurFilm.
+        "<br> genre: ".$this->filmGenre;
     }
 }

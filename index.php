@@ -12,9 +12,11 @@ $action = new Genre("Action");
 
 // echo $action;
 
-$killBill = new Film("Kill Bill", "2000", "200", "description of Kill Bill",
+$killBill = new Film("Kill Bill", "2000", "200", "A pregnant assassin, code-named The Bride, goes into a coma 
+                    for four years after her ex-boss Bill brutally attacks her. 
+                    When she wakes up, she sets out to seek revenge on him and his associates.",
                     $tarantino, $action);
 
 // echo $killBill;
-// echo $killBill->getInfo();
+echo $killBill->getInfo();
 
