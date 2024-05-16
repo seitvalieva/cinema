@@ -62,4 +62,8 @@ class Film {
 
         return $this;
     }
+    public function __toString() {
+
+        return $this->titre_film."<br>".$this->resume."<br>";
+    }
 }
