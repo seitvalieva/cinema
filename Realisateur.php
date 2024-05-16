@@ -65,7 +65,9 @@ class Realisateur {
         return "name: ".$this->name_realisateur."<br>prenom: ".$this->prenom_realisateur;
     }
 
-    public function getInfo() {
-        return $this."<br>sexe: ".$this->sexe_realisateur;
+    public function getInfo():string {
+
+        return $this."<br>sexe: ".$this->sexe_realisateur."<br> date de naissance: ".date("d-m-Y", $bday_realisateur)."<br>";
     }
+    
 }
