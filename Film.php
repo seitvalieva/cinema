@@ -5,8 +5,10 @@ class Film {
     private DateTime $dateSortie;  // Release date
     private int $dureeMinutes;    // duration in minutes
     private string $resume;         // description 
-    private Genre $filmGenre;       
     private Realisateur $realisateurFilm;   //director of a film
+    private Genre $filmGenre; 
+    private array $acteurs;      
+    
 
     //initializing object Film with its Realisateur and Genre
 
@@ -23,6 +25,8 @@ class Film {
         $this->resume = $resume;
         $this->realisateurFilm = $realisateurFilm;
         $this->filmGenre = $filmGenre;
+        $this->acteur->addFilm($this);
+        $this->acteurs = [];
         
     }
  
@@ -97,11 +101,21 @@ class Film {
 
         return $this;
     }
+    public function getActeurs()
+    {
+        return $this->acteurs;
+    }
+
+    public function setActeurs($acteurs)
+    {
+        $this->acteurs = $acteurs;
+
+        return $this;
+    }
     public function __toString() {
 
         return $this->titreFilm."<br>".$this->resume."<br>";
     }
-
     //displaying info about a film with info about its director and genre
 
     public function getInfo(): string {
@@ -110,4 +124,9 @@ class Film {
         date_format($this->dateSortie, "Y")."<br>realisateur: ".$this->realisateurFilm.
         "<br> genre: ".$this->filmGenre;
     }
+    // add each new acteur to film
+    public function addActeur(Acteur $acteur){
+        $this->acteurs[] = $acteur;
+    }
+
 }
