@@ -9,12 +9,15 @@ class Film {
     private Realisateur $realisateurFilm;
 
     public function __construct(string $titreFilm, string $dateSortie, 
-                                int $dureeMinutes, string $resume)
+                                int $dureeMinutes, string $resume,
+                                Realisateur $realisateurFilm, Genre $filmGenre )
     {
         $this->titreFilm = $titreFilm;
         $this->dateSortie = new DateTime($dateSortie);
         $this->dureeMinutes = $dureeMinutes;
         $this->resume = $resume;
+        $this->filmGenre = $filmGenre;
+        $this->realisateurFilm = $realisateurFilm;
     }
  
     public function getTitreFilm()
@@ -64,8 +67,35 @@ class Film {
 
         return $this;
     }
+ 
+    public function getFilmGenre()
+    {
+        return $this->filmGenre;
+    }
+
+    public function setFilmGenre($filmGenre)
+    {
+        $this->filmGenre = $filmGenre;
+
+        return $this;
+    }
+
+    public function getRealisateurFilm()
+    {
+        return $this->realisateurFilm;
+    }
+
+    public function setRealisateurFilm($realisateurFilm)
+    {
+        $this->realisateurFilm = $realisateurFilm;
+
+        return $this;
+    }
     public function __toString() {
 
         return $this->titreFilm."<br>".$this->resume."<br>";
+    }
+    public function getInfo(): string {
+        return $this."duree:".$this->dureeMinutes."<br> annee: ".date_format($this->dateSortie, "Y");
     }
 }

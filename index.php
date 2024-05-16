@@ -5,14 +5,16 @@ require "Genre.php";
 
 $tarantino = new Realisateur("Quentin", "Tarantino", "m", "27 march 1963");
 
-echo $tarantino;
-echo $tarantino->getInfo();
+// echo $tarantino;
+// echo $tarantino->getInfo();
 
+$action = new Genre("Action");
 
-// $killBill = new Film("Kill Bill", "2000", "200", "description of Kill Bill");
+// echo $action;
 
-// // echo $killBill;
+$killBill = new Film("Kill Bill", "2000", "200", "description of Kill Bill",
+                    $tarantino, $action);
 
-// $action = new Genre("Action");
+// echo $killBill;
+// echo $killBill->getInfo();
 
-// // echo $action;
