@@ -3,6 +3,7 @@ require "Realisateur.php";
 require "Film.php";
 require "Genre.php";
 require "Acteur.php";
+require "Role.php";
 
 $tarantino = new Realisateur("Quentin", "Tarantino", "m", "27 march 1963");
 
@@ -27,6 +28,13 @@ $killBill = new Film("Kill Bill", "2003", "111", "A pregnant assassin, code-name
 // echo $umaThurman;
 
 // var_dump($tarantino);
+
 $killBill2 = new Film("Kill Bill2", "2008", "120", "description of kill bill 2",
                     $tarantino, $action);
-echo $tarantino->displayFilmsRealisateur();
+// echo $tarantino->displayFilmsRealisateur();
+// var_dump($tarantino);
+
+$bride = new Role("Bride", $killBill);
+
+$bill = new Role("Bill", $killBill);
+echo $killBill->displayRoles();
