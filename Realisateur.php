@@ -18,7 +18,7 @@ class Realisateur {
         $this->filmsRealisateur = [];       //initialize empty array of Realisateur's films
     }
 
-    // getters n setters pour acceder et modifier les attribues
+    // getters n setters to access and modify attributes
     public function getNameRealisateur()
     {
         return $this->nameRealisateur;
@@ -101,5 +101,14 @@ class Realisateur {
         $this->filmsRealisateur[] = $filmRealisateur;
     }
     
+    public function displayFilmsRealisateur() {
+        $result = "<h1> $this films <br>";
 
+        foreach($this->filmsRealisateur as $filmRealisateur){
+
+            $result .= $filmRealisateur." <br>";
+        }
+        return $result;
+
+    }
 }

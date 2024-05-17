@@ -26,4 +26,7 @@ $killBill = new Film("Kill Bill", "2003", "111", "A pregnant assassin, code-name
 
 // echo $umaThurman;
 
-var_dump($tarantino);
+// var_dump($tarantino);
+$killBill2 = new Film("Kill Bill2", "2008", "120", "description of kill bill 2",
+                    $tarantino, $action);
+echo $tarantino->displayFilmsRealisateur();
