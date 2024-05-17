@@ -6,7 +6,7 @@ class Acteur {
     private string $nomActeur;
     private string $sexeActeur;
     private string $bdayActeur;
-    private array $filmsActeur;
+    private array $films;
 
     public function __construct(string $nameActeur, string $nomActeur, 
                             string $sexeActeur, $bdayActeur){
@@ -15,7 +15,7 @@ class Acteur {
         $this->sexeActeur = $sexeActeur;
         $this->bdayActeur  = $bdayActeur;    
         $this->filmsActeur = []; 
-        $this->filmActeur->addActeur($this);  
+        $this->film->addActeur($this);  
 
  }
  

@@ -7,7 +7,7 @@ require "Acteur.php";
 $tarantino = new Realisateur("Quentin", "Tarantino", "m", "27 march 1963");
 
 // echo $tarantino;
-echo $tarantino->getInfo();
+// echo $tarantino->getInfo();
 
 $action = new Genre("Action");
 
@@ -25,3 +25,4 @@ $umaThurman = new Acteur("Uma", "Thurman", "f", "29 april 1970");
 
 // echo $umaThurman;
 
+// var_dump($tarantino);

@@ -101,7 +101,7 @@ class Film {
 
         return $this;
     }
-    public function getActeurs()
+    public function getActeurs():array
     {
         return $this->acteurs;
     }
@@ -125,7 +125,9 @@ class Film {
         "<br> genre: ".$this->filmGenre;
     }
     // add each new acteur to film
-    public function addActeur(Acteur $acteur){
+    
+    public function addActeur(Acteur $acteur)
+    {
         $this->acteurs[] = $acteur;
     }
 
