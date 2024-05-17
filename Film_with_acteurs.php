@@ -5,16 +5,16 @@ class Film {
     private DateTime $dateSortie;  // Release date
     private int $dureeMinutes;    // duration in minutes
     private string $resume;         // description 
-    private Realisateur $realisateur;   //director of a film
+    private Realisateur $realisateurFilm;   //director of a film
     private Genre $filmGenre; 
-         
+    private array $acteurs;      
     
 
     //initializing object Film with its Realisateur and Genre
 
     public function __construct(string $titreFilm, string $dateSortie, 
                                 int $dureeMinutes, string $resume,
-                                Realisateur $realisateur, Genre $filmGenre )
+                                Realisateur $realisateurFilm, Genre $filmGenre )
     {
         //initialiser des variables/attribues et donner leurs valeurs
         //$this pour designer l'objet currant
@@ -23,13 +23,13 @@ class Film {
         $this->dateSortie = new DateTime($dateSortie); //transformer en date type
         $this->dureeMinutes = $dureeMinutes;
         $this->resume = $resume;
-        $this->realisateur = $realisateur;
+        $this->realisateurFilm = $realisateurFilm;
         $this->filmGenre = $filmGenre;
-
-        $this->realisateur->addFilmRealisateur($this); // added at the same time to the array filmsRealisateur[]
+        $this->acteur->addFilm($this);
+        $this->acteurs = [];
         
     }
-    //  getters n setters
+ 
     public function getTitreFilm():string
     {
         return $this->titreFilm;
@@ -90,32 +90,45 @@ class Film {
         return $this;
     }
 
-    public function getRealisateur():Realisateur
+    public function getRealisateurFilm():Realisateur
     {
-        return $this->realisateur;
+        return $this->realisateurFilm;
     }
 
-    public function setRealisateur($realisateur)
+    public function setRealisateurFilm($realisateurFilm)
     {
-        $this->realisateur = $realisateur;
+        $this->realisateurFilm = $realisateurFilm;
 
         return $this;
     }
-    // end of getters n setters
+    public function getActeurs():array
+    {
+        return $this->acteurs;
+    }
 
+    public function setActeurs($acteurs)
+    {
+        $this->acteurs = $acteurs;
 
-    // function toString
+        return $this;
+    }
     public function __toString() {
 
         return $this->titreFilm."<br>".$this->resume."<br>";
     }
-
     //displaying info about a film with info about its director and genre
+
     public function getInfo(): string {
 
         return $this."duree: ".$this->dureeMinutes." minutes<br> annee: ".
-        date_format($this->dateSortie, "Y")."<br>realisateur: ".$this->realisateur.
-        "<br> genre: ".$this->filmGenre."<br>";
+        date_format($this->dateSortie, "Y")."<br>realisateur: ".$this->realisateurFilm.
+        "<br> genre: ".$this->filmGenre;
+    }
+    // add each new acteur to film
+    
+    public function addActeur(Acteur $acteur)
+    {
+        $this->acteurs[] = $acteur;
     }
 
 }

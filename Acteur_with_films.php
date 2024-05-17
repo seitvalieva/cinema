@@ -6,16 +6,19 @@ class Acteur {
     private string $nomActeur;
     private string $sexeActeur;
     private string $bdayActeur;
+    private array $films;
 
     public function __construct(string $nameActeur, string $nomActeur, 
-                                string $sexeActeur, string $bdayActeur)
-                                {                        
+                            string $sexeActeur, string $bdayActeur){
         $this->nameActeur = $nameActeur;
         $this->nomActeur = $nomActeur;
         $this->sexeActeur = $sexeActeur;
-        $this->bdayActeur  = new DateTime($bdayActeur);  
-    }
-    //getters n setters functions
+        $this->bdayActeur  = new DateTime($bdayActeur);    
+        $this->filmsActeur = []; 
+        $this->film->addActeur($this);  
+
+ }
+ 
     public function getNameActeur():string
     {
         return $this->nameActeur;
@@ -63,12 +66,23 @@ class Acteur {
 
         return $this;
     }
-    // end of getters n setters
     
-    // function toString
+    public function getFilmsActeur():array
+    {
+        return $this->filmsActeur;
+    }
+ 
+    public function setFilmsActeur($filmsActeur)
+    {
+        $this->filmsActeur = $filmsActeur;
+        
+        return $this;
+    }
     public function __toString():string
     {
         return $this->nameActeur." ".$this->nomActeur;
     }
+    public function addFilm(Film $filmActeur) {
+        $this->filmsActeur[] = $filmActeur;
+    }
 }
- 

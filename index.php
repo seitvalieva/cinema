@@ -20,9 +20,10 @@ $killBill = new Film("Kill Bill", "2003", "111", "A pregnant assassin, code-name
 
 // echo $killBill;
 // echo $killBill->getInfo();
+// var_dump($killBill);
 
-$umaThurman = new Acteur("Uma", "Thurman", "f", "29 april 1970");
+// $umaThurman = new Acteur("Uma", "Thurman", "f", "29 april 1970");
 
 // echo $umaThurman;
 
-// var_dump($tarantino);
+var_dump($tarantino);
