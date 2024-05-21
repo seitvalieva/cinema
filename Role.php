@@ -52,7 +52,7 @@ class Role {
         $result = "<b>Les acteurs ayant joué le rôle de $this :</b><br>";
 
         foreach($this->castings as $casting) {
-            $result .= $casting->getActeur()."<br>";
+            $result .= $casting->getActeur()." dans le ".$casting->getfilm()."<br>";
         }
 
         return $result;

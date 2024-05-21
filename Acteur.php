@@ -96,7 +96,7 @@ class Acteur {
         
         foreach($this->castings as $casting){
 
-            $result .= $casting->getFilm()."<br>";
+            $result .= "dans le ".$casting->getFilm()." a joué ".$casting->getRole()."<br>";
             // $result .= $casting->getRole()."a été incarné par ".$casting->getActeur()."<br>";
         }
 
