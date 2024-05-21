@@ -37,4 +37,4 @@ $cast2 = new Casting($killBill, $bill, $davidCarradine);
 echo $killBill->displayCasting();
 echo $umaThurman->getFilmographie();
 echo $bill->displayActeurs();
-
+echo $action->displayFilmsParGenre();

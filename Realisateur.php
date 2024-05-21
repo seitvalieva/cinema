@@ -103,7 +103,7 @@ class Realisateur {
     
     // display Realisateur's films
     public function displayFilmsRealisateur() {
-        $result = "<h1> $this's films </h1> <br>";
+        $result = "<b> $this's films </b> <br>";
 
         foreach($this->filmsRealisateur as $filmRealisateur){
 

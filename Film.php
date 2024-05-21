@@ -27,6 +27,7 @@ class Film {
         $this->filmGenre = $filmGenre;
 
         $this->realisateur->addFilmRealisateur($this); // added at the same time to the array filmsRealisateur[]
+        $this->filmGenre->addFilmParGenre($this);
 
         $this->castings = [];
     }
