@@ -3,14 +3,17 @@
 class Role {
 
     private string $nomPersonnage;
-    private Film $film;
 
-    public function __construct(string $nomPersonnage, Film $film)
+    // private Film $film;
+    private array $castings;
+
+    public function __construct(string $nomPersonnage)
     {
         $this->nomPersonnage = $nomPersonnage;
-        $this->film = $film;
+        // $this->film = $film;
 
-        $this->film->addRole($this);
+        // $this->film->addRole($this);
+        $this->castings = [];
     }
     // getters n setters
     public function getNomPersonnage():string
@@ -25,15 +28,26 @@ class Role {
         return $this;
     }
  
-    public function getFilm():Film
+    // public function getFilm():Film
+    // {
+    //     return $this->film;
+    // }
+
+    // public function setFilm($film)
+    // {
+    //     $this->film = $film;
+
+    //     return $this;
+    // }
+    public function getCastings()
     {
-        return $this->film;
+        return $this->castings;
     }
-
-    public function setFilm($film)
+            
+    public function setCastings($castings)
     {
-        $this->film = $film;
-
+        $this->castings = $castings;
+            
         return $this;
     }
     //end of getters n setters
@@ -42,5 +56,9 @@ class Role {
     public function __toString() 
     {
         return $this->nomPersonnage." ";
+    }
+
+    public function addCasting(Casting $casting){
+        $this->castings[] = $casting;
     }
 }

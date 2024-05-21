@@ -8,7 +8,9 @@ class Film {
     private Realisateur $realisateur;   //director of a film
     private Genre $filmGenre; 
     
-    private array $roles;
+                // private array $roles;
+
+    private array $castings;
 
     //initializing object Film with its Realisateur and Genre
 
@@ -28,7 +30,9 @@ class Film {
 
         $this->realisateur->addFilmRealisateur($this); // added at the same time to the array filmsRealisateur[]
         
-        $this->roles = [];
+                    // $this->roles = [];
+
+        $this->castings = [];
     }
     //  getters n setters
     public function getTitreFilm():string
@@ -102,15 +106,26 @@ class Film {
 
         return $this;
     }
-    public function getRoles()
+                // public function getRoles()
+                // {
+                //     return $this->roles;
+                // }
+
+                // public function setRoles($roles)
+                // {
+                //     $this->roles = $roles;
+
+                //     return $this;
+                // }
+    public function getCastings()
     {
-        return $this->roles;
+        return $this->castings;
     }
-
-    public function setRoles($roles)
+            
+    public function setCastings($castings)
     {
-        $this->roles = $roles;
-
+        $this->castings = $castings;
+            
         return $this;
     }
     // end of getters n setters
@@ -131,20 +146,34 @@ class Film {
         "<br> genre: ".$this->filmGenre."<br>";
     }
 
-    // adding a new Role to a Film
-    public function addRole(Role $role)
-    {
-        $this->roles[] = $role;
+            // adding a new Role to a Film
+            // public function addRole(Role $role)
+            // {
+            //     $this->roles[] = $role;
+            // }
+
+            // // display Film's personnages
+            // public function displayRoles()
+            // {
+            //     $result = "<h2> $this roles </h2><br>";
+
+            //     foreach($this->roles as $role){
+            //         $result .= $role.", ";
+            //     }
+            //     return $result;
+            // }
+    public function addCasting(Casting $casting){
+        $this->castings[] = $casting;
     }
 
-    // display Film's personnages
-    public function displayRoles()
-    {
-        $result = "<h2> $this roles </h2><br>";
-
-        foreach($this->roles as $role){
-            $result .= $role.", ";
+    public function displayCasting(){
+        $result = "";
+        
+        foreach($this->castings as $casting){
+            $result .= $casting->getRole()."a été incarné par ".$casting->getActeur()."<br>";
         }
+
         return $result;
     }
+
 }
