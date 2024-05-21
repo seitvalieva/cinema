@@ -7,8 +7,6 @@ class Film {
     private string $resume;         // description 
     private Realisateur $realisateur;   //director of a film
     private Genre $filmGenre; 
-    
-                // private array $roles;
 
     private array $castings;
 
@@ -29,8 +27,6 @@ class Film {
         $this->filmGenre = $filmGenre;
 
         $this->realisateur->addFilmRealisateur($this); // added at the same time to the array filmsRealisateur[]
-        
-                    // $this->roles = [];
 
         $this->castings = [];
     }
@@ -106,17 +102,7 @@ class Film {
 
         return $this;
     }
-                // public function getRoles()
-                // {
-                //     return $this->roles;
-                // }
-
-                // public function setRoles($roles)
-                // {
-                //     $this->roles = $roles;
-
-                //     return $this;
-                // }
+                
     public function getCastings()
     {
         return $this->castings;
@@ -146,22 +132,6 @@ class Film {
         "<br> genre: ".$this->filmGenre."<br>";
     }
 
-            // adding a new Role to a Film
-            // public function addRole(Role $role)
-            // {
-            //     $this->roles[] = $role;
-            // }
-
-            // // display Film's personnages
-            // public function displayRoles()
-            // {
-            //     $result = "<h2> $this roles </h2><br>";
-
-            //     foreach($this->roles as $role){
-            //         $result .= $role.", ";
-            //     }
-            //     return $result;
-            // }
     public function addCasting(Casting $casting){
         $this->castings[] = $casting;
     }
