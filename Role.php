@@ -47,4 +47,14 @@ class Role {
     public function addCasting(Casting $casting){
         $this->castings[] = $casting;
     }
+
+    public function displayActeurs(){
+        $result = "<b>Les acteurs ayant joué le rôle de $this :</b><br>";
+
+        foreach($this->castings as $casting) {
+            $result .= $casting->getActeur()."<br>";
+        }
+
+        return $result;
+    }
 }

@@ -90,5 +90,17 @@ class Acteur {
     public function addCasting(Casting $casting){
         $this->castings[] = $casting;
     }
+
+    public function getFilmographie(){
+        $result = "<b>Filmographie de $this : </b><br>";
+        
+        foreach($this->castings as $casting){
+
+            $result .= $casting->getFilm()."<br>";
+            // $result .= $casting->getRole()."a été incarné par ".$casting->getActeur()."<br>";
+        }
+
+        return $result;
+    }
 }
  

@@ -137,7 +137,7 @@ class Film {
     }
 
     public function displayCasting(){
-        $result = "";
+        $result = "<b> Le casting de $this : </b><br>";
         
         foreach($this->castings as $casting){
             $result .= $casting->getRole()."a été incarné par ".$casting->getActeur()."<br>";
